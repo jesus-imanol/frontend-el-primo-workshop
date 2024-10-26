@@ -1,0 +1,28 @@
+<div class="header-car">
+    <img src="/logo_el_primo.svg" alt="Logo El Primo">
+    <h2>Agenda tu cita</h2>
+    <h2 class="return" routerLink="/">Regresar</h2>
+</div>
+<div class="schedule-car" [formGroup]="sheduleForm">
+    <div class="user-info">
+        <h2 class="title">Hola Jesus</h2>
+        <h2 class="title">Cuentanos que pasa con tu nave</h2>
+    </div>
+    <div class="field">
+        <input type="text" placeholder="Modelo y version" formControlName="modelVersion">
+    </div>
+    <div class="field">
+        <input type="text" placeholder="Detalles" formControlName="details">
+    </div>
+    <div class="field">
+        <input type="text" placeholder="¿Lo necesitas rapido?" formControlName="need">
+    </div>
+    <div class="two-field">
+        <input  type="text" placeholder="Dia: ej. 17/09/2024" formControlName="date">
+        <input  type="text" placeholder="Hora: ej. 16:00" formControlName="time">
+    </div>
+    <div class="btn-submit">
+        <img src="./assets/submit.svg" alt="User submit">
+        <p>Submit</p>
+    </div>
+</div>

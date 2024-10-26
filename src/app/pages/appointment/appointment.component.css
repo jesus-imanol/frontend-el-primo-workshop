@@ -1,0 +1,49 @@
+.appointment-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-image: url("../../../../public/assets/car_background.svg");
+    background-size: cover; 
+    background-repeat: no-repeat;
+    flex-direction: row;
+    gap: 3%;
+}
+.schedule-do {
+    display: flex;
+    width: 40%;
+    height: 80%;
+    background-color: rgba(168, 168, 168, 0.305);
+    flex-direction: column; 
+    border-radius: 30px;
+    justify-content: center;
+}
+.status-message {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 80%;
+    align-items: center;
+    gap: 10%;
+}
+.status {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 35%;
+    background-color: rgba(168, 168, 168, 0.305);
+    border-radius: 30px;
+    justify-content: center ;
+    align-items: center;
+}
+.message {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 55%;
+    background-color: rgba(168, 168, 168, 0.305);
+    border-radius: 30px;
+    justify-content: center ;
+    align-items: center;
+}

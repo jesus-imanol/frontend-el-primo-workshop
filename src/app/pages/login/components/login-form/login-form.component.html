@@ -1,0 +1,19 @@
+<div class="login-header">
+    <img src="/logo_el_primo.svg" alt="Aqui deberia aparecer la imagen">
+    <h2>Mechanical workshop</h2>
+    <h2 class="return" routerLink="/" >Regresar</h2>
+</div>
+<div class="login-form" [formGroup]="loginForm" >
+    <h2 class="title">Log in</h2>
+    <div class="field">
+        <input type="text" placeholder="username" formControlName="username">
+    </div>
+    <div class="field">
+        <input type="text" placeholder="password" formControlName="password">
+    </div>
+    <div class="btn-submit">
+        <img src="./assets/user_icon_white.svg" alt="User icon">
+        <p>Log in</p>
+    </div>
+    <h3 class="account" routerLink="/register">You are not registered? Register here</h3>
+</div>

@@ -1,0 +1,18 @@
+.login-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-image: url("../../../../public/assets/car_background.svg");
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
+.form-login {
+    display: flex;
+    width: 50%;
+    height: 70%;
+    background-color: rgba(168, 168, 168, 0.305);
+    flex-direction: column; 
+    border-radius: 30px;
+}

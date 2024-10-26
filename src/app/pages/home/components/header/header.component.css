@@ -1,0 +1,59 @@
+header {
+    display: flex;
+    width: 100%;
+    height: 20vh;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5C5C5C;
+
+}
+.logo {
+    width: 20%;
+    height: 100%;
+    padding: 2%;
+}
+.logo img {
+    width: 90%;
+    height: 80%;
+}
+.text {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.text h2 {
+    font-size: 48px;
+    color: #E6E6E6;
+}
+.login-register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+}
+.btn-login-register {
+    width: 269px;
+    height: 66px;
+    background-color: rgba(168, 168, 168, 0.305); 
+    border-radius: 20px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.btn-login-register p {
+    color: #FFFFFF;
+}
+.btn-login-register p:hover {
+    color: #000000;
+    cursor: pointer;
+}
+.btn-login-register img {
+    width: 40px;
+    height: 40px;
+}

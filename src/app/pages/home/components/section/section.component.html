@@ -1,0 +1,25 @@
+<div class="section-home">
+   <div class="box-info">
+    <div class="entrance-info">
+        <div class="schedule" #scheduleText>
+            <h2>Tu mejor <br> taller con la <br> atención de <br> calidad.</h2>
+
+            <div class="appointment" (click)="appointment()" routerLink="/schedule" #appointmentText >
+                <img src="./assets/schedule.svg" alt="icon appointment">
+                <p>Agendar cita</p>
+            </div>
+        </div>
+        <div class="hour-location">
+            <div class="hour" #hourText>
+                <h3>Estamos aquí para ti de lunes a sábado,<br> de 8 am a 6 pm</h3>
+            </div>
+            <div class="location" #locationText>
+                <h3>Ubicados en tonalá, chiapas</h3>
+            </div>
+        </div>
+    </div>
+   </div>
+   <div class="box-img">
+    <img #serviceImage *ngFor="let item of serviceFavorites" src={{item.img}} alt="taller">
+   </div>
+</div>
