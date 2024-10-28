@@ -11,14 +11,13 @@ export class ServiceRegisterService {
 
   register(user:IUser) : IUser{
     let adress = this.url + 'users';
-    console.log(adress);
-    console.log(user);
     let resp =  this.http.post<IUser>(adress, user)
     .subscribe(data => {
+      localStorage.setItem('user', JSON.stringify(user.username));
       return data;
     }
     )
-    localStorage.setItem('user', JSON.stringify(user.username));
+ 
     return user;
   }
 }
