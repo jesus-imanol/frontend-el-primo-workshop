@@ -6,7 +6,7 @@
 <div class="register-form" [formGroup]="registerForm" >
     <h2 class="title">Register</h2>
     <div class="field">
-        <input type="text" placeholder="fullname" formControlName="fullname">
+        <input type="text" placeholder="fullname" formControlName="fullName">
     </div>
     <div class="field">
         <input type="text" placeholder="username" formControlName="username">
@@ -14,7 +14,7 @@
     <div class="field">
         <input type="text" placeholder="password" formControlName="password">
     </div>
-    <div class="btn-submit">
+    <div class="btn-submit" (click)="sendRegister()">
         <img src="./assets/user_icon_white.svg" alt="User icon">
         <p>Register</p>
     </div>

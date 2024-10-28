@@ -1,6 +1,6 @@
 export interface IUser {
     username: string;
-    fullname: string;
+    fullName: string;
     password: string;
-    rol: "Client";
+    role: "Client";
 }
