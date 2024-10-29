@@ -2,5 +2,8 @@
     <h2>Estado de mi nave</h2>
 </div>
 <div class="status">
-    <h2>Por entregar</h2>
+    <h2 *ngIf="status==''">
+        ...
+    </h2>
+    <h2 *ngIf="status!=''">{{status}}</h2>
 </div>

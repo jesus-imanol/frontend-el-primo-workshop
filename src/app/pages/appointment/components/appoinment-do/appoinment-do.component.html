@@ -15,13 +15,13 @@
         <input type="text" placeholder="Detalles" formControlName="details">
     </div>
     <div class="field">
-        <input type="text" placeholder="¿Lo necesitas rapido?" formControlName="need">
+        <input type="text" placeholder="¿Lo necesitas rapido?" formControlName="fast">
     </div>
     <div class="two-field">
         <input  type="text" placeholder="Dia: ej. 17/09/2024" formControlName="date">
         <input  type="text" placeholder="Hora: ej. 16:00" formControlName="time">
     </div>
-    <div class="btn-submit">
+    <div class="btn-submit" (click)="sendAppointment()">
         <img src="./assets/submit.svg" alt="User submit">
         <p>Submit</p>
     </div>
