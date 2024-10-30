@@ -1,0 +1,12 @@
+/* Intenta un CSS con más especificidad */
+.ui-calendar .ui-datepicker td[data-cita="true"] .ui-state-default::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: red;
+  border-radius: 50%;
+}

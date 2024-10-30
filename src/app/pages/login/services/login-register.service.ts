@@ -40,31 +40,7 @@ export class LoginRegisterService {
        // error is here, but we can only call side things.
     }, 
 })).subscribe()
-    
-  /*  {
-    next: (data) => {
-      this.response = data.message 
-      console.log(this.response);
-      
-      if(this.response == 'Login exitoso'){
-        localStorage.setItem('username',userLogin.username);
-        Swal.fire({
-          icon: 'success',
-          title: 'Login exitoso',
-          text: 'Bienvenido ' + userLogin.username
-        })
-        this.router.navigate(['/appointment']);
-      }
-      else{
-        Swal.fire({
-          icon: 'error',
-          title: 'username o password incorrectos',
-        })
-      }
-    },
-    error: (err) => this.response = err
-  });
-*/
+
  }
 
  

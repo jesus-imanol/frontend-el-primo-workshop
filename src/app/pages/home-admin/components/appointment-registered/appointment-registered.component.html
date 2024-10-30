@@ -1,0 +1,35 @@
+<p-calendar 
+    [(ngModel)]="fechaSeleccionada"
+    [showButtonBar]="true"
+    (onSelect)="mostrarCitasDelDia($event)"
+    (onMonthChange)="actualizarDiasConCitas($event)"
+    [dayTemplate]="diaPlantilla"
+    dateFormat="dd/mm/yy">
+</p-calendar>
+
+<ng-template #diaPlantilla let-fecha>
+  <span 
+      [ngClass]="{'ui-state-default': true}" 
+      [attr.data-cita]="diasConCitas[fecha.day] ? true : null">
+    {{ fecha.day }}
+  </span>
+</ng-template>
+
+<p-dialog header="Citas para el día" [(visible)]="mostrarModal" [modal]="true" [closable]="true" [style]="{width: '80vw', height: '40vh'}">
+  <div *ngIf="citasDelDia.length > 0">
+    <ul>
+      <li *ngFor="let cita of citasDelDia">
+        {{ cita.hora }} - {{ cita.name }}: {{ cita.details }}
+        <p-dropdown 
+        [options]="estados" 
+        [(ngModel)]="estadoSeleccionado" 
+        [placeholder]="'Selecciona un estado'" >
+      </p-dropdown>
+      <p-button label="Update" (onClick)="estadoSeleccionado !== null ? actualizarEstado(cita.ID_Cita, estadoSeleccionado) : null"/>
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="citasDelDia.length === 0">
+    <p>No hay citas para este día.</p>
+  </div>
+</p-dialog>
