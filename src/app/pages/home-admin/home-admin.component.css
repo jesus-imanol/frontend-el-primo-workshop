@@ -7,12 +7,23 @@
     background-image: url("../../../../public/assets/car_background.svg");
     background-size: cover; 
     background-repeat: no-repeat;
+    gap: 5%;
 }
 .appointment-registered {
     display: flex;
-    width: 50%;
+    width: 40%;
     height: 80%;
     background-color: rgba(168, 168, 168, 0.305);
     border: 1px solid #000000;;
     border-radius: 30px;
+}
+.send-mesaages {
+    display: flex;
+    width: 40%;
+    height: 80%;
+    background-color: #a8a8a84e;
+    border: 1px solid #000000;;
+    border-radius: 30px;
+    flex-direction: column;
+    justify-content: center;
 }

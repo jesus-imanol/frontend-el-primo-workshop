@@ -1,0 +1,22 @@
+<div [formGroup]="messages">
+    <h1 class="title">Enviar Mensaje</h1>
+    
+    <div class="input-group">
+      <label class="label">Busca el cliente por username</label>
+      <input type="text" class="input" placeholder="Username" formControlName="username">
+    </div>
+    
+    <div class="dropdown-group">
+      <label class="label">Cita</label>
+      <select class="dropdown" formControlName="selectedCitaId">
+        <option value="">Seleccione...</option>
+        <option *ngFor="let cita of filteredCitas" [value]="cita.ID_Cita">
+          {{ cita.Fecha }} {{ cita.Hora }}
+        </option>
+      </select>
+    </div>
+    
+    <textarea class="textarea" placeholder="Sé sincero aquí" formControlName="mensaje"></textarea>
+    <button (click)="enviarMensaje()">Enviar Mensaje</button>
+  </div>
+  

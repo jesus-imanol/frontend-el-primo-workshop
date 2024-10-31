@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Cita } from '../models/cita';
@@ -14,14 +14,20 @@ export class AppointmentsService {
   getCitas(): Observable<{ status: boolean; data: Cita[] }> {
     return this.http.get<{ status: boolean; data: Cita[] }>(this.url);
   }
+  // En appointments.service.ts
 
-  updateAppointment(idCita: number, estado: number): Observable<{ status: boolean; data: Cita }> {
-    const url = `${this.url}/${idCita}/status`;
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
+sendMessage(citaId: number, mensaje: string): Observable<any> {
+  const url = `${this.url}/message`;
+  return this.http.post<any>(url, { citaId, mensaje });
+}
 
-    });
 
-    return this.http.patch<{ status: boolean; data: Cita }>(url, estado);
+  getCitasByClientId(userId: number): Observable<{ status: boolean; data: Cita[] }> {
+    return this.http.get<{ status: boolean; data: Cita[] }>(`${this.url}/client/${userId}`);
+  }
+
+  updateAppointmentStatus(id: number, status: number): Observable<any> {
+    const url = `http://localhost:3000/api/appointment/status/${id}`;
+    return this.http.put<any>(url, { status });
   }
 }

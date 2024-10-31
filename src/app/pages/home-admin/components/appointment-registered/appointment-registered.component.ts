@@ -89,14 +89,7 @@ export class AppointmentRegisteredComponent implements OnInit {
     this.mostrarModal = true;
   }
   actualizarEstado(idCita: number, nuevoEstado: number) {
-    this.appointmentsService.updateAppointment(idCita, nuevoEstado).subscribe(
-      response => {
-      },
-      error => {
-        console.error('Error al actualizar el estado de la cita:', error);
-      }
-    );
-    console.log(`Actualizando cita ID: ${idCita} a estado: ${nuevoEstado}`);
+    this.appointmentsService.updateAppointmentStatus(idCita, nuevoEstado)
   }
   
 }
