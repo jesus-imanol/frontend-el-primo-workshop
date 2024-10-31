@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IAppointment } from '../models/iappointment';
 import Swal from 'sweetalert2';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -29,6 +30,11 @@ export class AppointmentServiceService {
       }
     });
   }
+  getMessagesByAppointmentId(appointmentId: number) : Observable<any> {
+    let urlMessages ="http://98.80.95.233:3000/api/message/appointment"
+    return this.http.get<any>(`${urlMessages}/1`);
+  }
+
   getAppointmentById(id: number) {
     return this.http.get<any>(`${this.url}/${id}`).subscribe(
    {   next: (response) => {

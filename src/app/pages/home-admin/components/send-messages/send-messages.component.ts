@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Cita } from '../../models/cita';
 import { AppointmentsService } from '../../services/appointments.service';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl,ReactiveFormsModule, FormGroup } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { IMessage, IMessagePost } from '../../models/imessage';
+import { tap } from 'rxjs';
 @Component({
   standalone: true,
   selector: 'app-send-messages',
@@ -17,8 +19,7 @@ export class SendMessagesComponent implements OnInit {
 
   constructor(private appointmentsService: AppointmentsService) {
     this.messages = new FormGroup({
-      username: new FormControl(''),
-      mensaje: new FormControl(''),
+      content: new FormControl(''),
       selectedCitaId: new FormControl('')
     });
   }
@@ -42,19 +43,26 @@ export class SendMessagesComponent implements OnInit {
   }
 
   enviarMensaje() {
-    const citaId = this.messages.get('selectedCitaId')?.value;
-    const mensaje = this.messages.get('mensaje')?.value;
+    let mensaje : IMessagePost= {
+      content: this.messages.get('content')?.value,
+      appointmentId: this.messages.get('selectedCitaId')?.value,
+      date: new Date().toLocaleDateString()
+    };
 
-    if (citaId && mensaje) {
-      this.appointmentsService.sendMessage(citaId, mensaje).subscribe(
-        response => {
-          alert("Mensaje enviado correctamente");
-          this.messages.reset();
+    if (mensaje) {
+      this.appointmentsService.sendMessage(mensaje).pipe(tap({
+        next: (response) => {
+          if (response.status) {
+            alert("Mensaje enviado con éxito");
+          } else {
+            alert("Error al enviar el mensaje");
+          }
         },
-        error => {
-          alert("Ocurrió un error al enviar el mensaje");
+        error: (error) => {
+          alert("Error al enviar el mensaje");
         }
-      );
+      })
+      ).subscribe()
     } else {
       alert("Por favor, complete todos los campos");
     }

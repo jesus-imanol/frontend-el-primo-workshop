@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Cita } from '../models/cita';
+import { IMessage, IMessagePost } from '../models/imessage';
 
 @Injectable({
   providedIn: 'root'
@@ -14,11 +15,12 @@ export class AppointmentsService {
   getCitas(): Observable<{ status: boolean; data: Cita[] }> {
     return this.http.get<{ status: boolean; data: Cita[] }>(this.url);
   }
-  // En appointments.service.ts
 
-sendMessage(citaId: number, mensaje: string): Observable<any> {
-  const url = `${this.url}/message`;
-  return this.http.post<any>(url, { citaId, mensaje });
+sendMessage(message: IMessagePost): Observable<any> {
+  const url = "http://98.80.95.233:3000/api/message"
+  console.log(message);
+  
+  return this.http.post<any>(url,message);
 }
 
 

@@ -1,6 +1,11 @@
 <div class="message-text">
     <h2>Aquí verás el mensaje del <br> primo jesus si algo más <br> ocurrió</h2>
 </div>
-<div class="message">
-    <h2>Todo va bien con tu nave</h2>
+<div class="message" *ngIf="messages && messages.length > 0">
+    <h2 *ngFor="let item of messages">
+        {{ item.Contenido }}
+    </h2>
+</div>
+<div class="message" *ngIf="messages == null || messages.length === 0">
+    <h2>No hay mensajes disponibles.</h2>
 </div>

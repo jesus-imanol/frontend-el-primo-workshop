@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { AppointmentServiceService } from '../../services/appointment-service.service';
 import { CommonModule } from '@angular/common';
+import { IMessage } from '../../../home-admin/models/imessage';
+import { tap } from 'rxjs/operators';
 @Component({
   selector: 'app-status',
   standalone: true,
@@ -13,6 +15,7 @@ export class StatusComponent {
   status = ''
   constructor(private appointementService : AppointmentServiceService){}
 ngOnInit(): void {
+
   this.appointementService.getAppointmentById(parseInt(this.cita.id))
   if(localStorage.getItem('status') === '1'){
       this.status = 'Programada'
@@ -29,6 +32,6 @@ ngOnInit(): void {
   if(localStorage.getItem('status') === '5'){
     this.status = 'vehiculo recibido'
   }
-
 }
+
 }
